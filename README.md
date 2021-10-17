@@ -1,4 +1,4 @@
-# Neural_Network_Charity_Analysis
+# Neural Network Analysis (Deliverable 4)
 
 # Background:
 Alphabet Soup is a non-profit organization involved in raising and donating funds for environmental improvement efforts. The organization wants to ensure the funds are used effectively. Experience has shown not all funds donated to organizations with the intention of environmental improvements have been used wisely. Alphabet Soup is interested in classifying which organizations are worth donating to and which are high risk using a deep learning neural network that is capable of using all (most) of the available data in predicting whether applicants will be "successful" if funded by Alphabet Soup.  This model will be used to assist Alphabet Soup in determining which organizations receive future donations.
@@ -93,23 +93,47 @@ The inital model acheived ~ 72.4% accuracy using data it was not trained on
 <br>
 
 # Optimize the Model (Deliverable 3)
+## AlphabetSoupCharity_Optimization.ipynb contains the details for deliverable 3
 In order to exceed the benchmark of 75% model accuracy the model was optimized by exploring the following methods:
 
 * Adjusting the input data to ensure that there are no variables or outliers that are causing confusion in the model
-* Dropping more or fewer columns.
+* Dropping more or fewer columns. 
 * Creating more bins for rare occurrences in columns.
 * Increasing or decreasing the number of values for each bin.
-  
 
 
-
-* Adding more neurons to a hidden layer.
+* Adding more neurons to a hidden layer 
 * Adding more hidden layers.
 * Using different activation functions for the hidden layers.
 * Adding or reducing the number of epochs to the training regimen.
 
+### Optimized Model Training:
+The Optimized Model was trained using 100 epochs
 
+### Optimized Model Assessment:
+The Optimized Model was able to correctly classify "IS_SUCCESSFUL" over 77% of the time (on data it was not trained on)
 
+### Compare to Other Models Random Forest Vs. Deep Learning Model
 
+Random forest classifiers are a type of ensemble learning model that combines multiple smaller models into a more robust and accurate model. Random forest models use a number of weak learner algorithms (decision trees) and combine their output to make a final classification decision. Structurally speaking, random forest models are very similar to their neural network counterparts. Random forest models have been a staple in machine learning algorithms for many years due to their robustness and scalability. Both output and feature selection of random forest models are easy to interpret, and they can easily handle outliers and nonlinear data.
 
+Random forest algorithms are beneficial because they:
+
+* Are robust against overfitting as all of those weak learners are trained on different pieces of the data.
+* Can be used to rank the importance of input variables in a natural way.
+* Can handle thousands of input variables without variable deletion.
+* Are robust to outliers and nonlinear data.
+* Run efficiently on large datasets.
+
+## Random Forest Classifier Assessment:
+The Random forest classifier had a predictive accuracy: 0.759 (was able to accuately classify "IS_SUCCESSFUL" 75.9% of the time on data not used in training the model).  This is a difference of only about 1% and is also exceeds the benchmark of 755 accuracy.
+
+## Model Performance Comparison:
+Although their predictive performance was comparable, their implementation and training times were not the same. The random forest classifier was able to train on the large dataset and predict values in seconds, while the deep learning model required a couple minutes to train on the tens of thousands of data points. 
+
+In other words, the random forest model is able to achieve comparable predictive accuracy on large tabular data with less code and faster performance. The ultimate decision of whether to use a random forest versus a neural network comes down to preference. 
+
+## Recommended Model: Random Forest Classifier
+
+Since AlphabetSoup Charity's dataset is tabular, a random forest classifier is the recommended model based on performance, speed, explainability and simplicity of setup.
 
